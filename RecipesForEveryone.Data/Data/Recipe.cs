@@ -16,6 +16,7 @@ namespace RecipesForEveryone.Data.Data
         public string Ingredients { get; set; }
         public string Instructions { get; set; }
         public bool IsPublic { get; set; }
+        public byte[] Image { get; set; }
         public string UserID { get; set; }
         public virtual IEnumerable<RecipeType>? RecipeTypes { get; set; }
 

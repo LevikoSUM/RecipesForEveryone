@@ -17,10 +17,10 @@ namespace RecipesForEveryone.Data.Data
         public string Instructions { get; set; }
         public bool IsPublic { get; set; }
         public byte[] Image { get; set; }
-        public string UserID { get; set; }
-        public virtual IEnumerable<RecipeType>? RecipeTypes { get; set; }
+        public string UserId { get; set; }
+        public virtual RecipeType RecipeType { get; set; }
 
-        public virtual AppUser? User { get; set; }
+        public virtual AppUser? AppUser { get; set; }
         public virtual ICollection<Comment>? Comments { get; set; }
     }
 }

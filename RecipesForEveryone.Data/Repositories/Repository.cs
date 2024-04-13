@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RecipesForEveryone.Data.Data;
 using RecipesForEveryone.Data.Data.Abstractions;
 using RecipesForEveryone.Data.Repositories.Abstractions;
 using System;
@@ -13,9 +14,9 @@ namespace RecipesForEveryone.Data.Repositories
     public class Repository<T> : IRepository<T>
         where T : BaseEntity
     {
-        private readonly DbContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly DbSet<T> _dbSet;
-        public Repository(DbContext context)
+        public Repository(ApplicationDbContext context)
         {
             _context = context;
             _dbSet = context.Set<T>();

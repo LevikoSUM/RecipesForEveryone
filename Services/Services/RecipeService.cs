@@ -44,14 +44,16 @@ namespace Services.Services
                 (await _repository.GetByIdAsync(id));
         }
 
-        public Task<IEnumerable<RecipeDTO>> GetRecipesByTypeAsync(RecipeType recipeType)
+        public async Task<IEnumerable<RecipeDTO>> GetRecipesByTypeAsync(RecipeType recipeType)
         {
-            throw new NotImplementedException();
+            var recipes = await _repository.GetAsync(r => r.RecipeType == recipeType);
+            return _mapper.Map<IEnumerable<RecipeDTO>>(recipes);
         }
 
-        public Task<IEnumerable<RecipeDTO>> GetRecipesByUserIdAsync(string userId)
+        public async Task<IEnumerable<RecipeDTO>> GetRecipesByUserIdAsync(string userId)
         {
-            throw new NotImplementedException();
+            var recipes = await _repository.GetAsync(r => r.UserId == userId);
+            return _mapper.Map<IEnumerable<RecipeDTO>>(recipes);
         }
 
         public async Task UpdateRecipeAsync(RecipeDTO recipe)

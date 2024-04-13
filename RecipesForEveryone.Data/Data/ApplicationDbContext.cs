@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using RecipesForEveryone.Data.Data;
 using System.Diagnostics;
 
-namespace RecipesForEveryone.Data
+namespace RecipesForEveryone.Data.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

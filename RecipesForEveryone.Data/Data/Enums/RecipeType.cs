@@ -8,14 +8,26 @@ namespace RecipesForEveryone.Data.Data.Enums
 {
     public enum RecipeType
     {
-        OTHER = 0,
-        PASTA = 1,
-        DRINKS = 2,
-        SALAD = 3,
-        FISH = 4,
-        BEEF = 5,
-        CHICKEN = 6,
-        PORK = 7,
-        SOUP = 8
+        Soup = 0,
+        Pasta = 1,
+        Drinks = 2,
+        Salad = 3,
+        Fish = 4,
+        Beef = 5,
+        Chicken = 6,
+        Pork = 7,
+        Dessert = 8,
+        Appetizer = 9,
+        SideDish = 10,
+        Breakfast = 11,
+        Sandwich = 12,
+        Bread = 13,
+        Casserole = 14,
+        Stew = 15,
+        Curry = 16,
+        Pizza = 17,
+        Burger = 18,
+        Pie = 19,
+        Other = 20
     }
 }

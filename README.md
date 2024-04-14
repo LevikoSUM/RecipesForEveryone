@@ -1,16 +1,18 @@
 Introduction: “Recipes for Everyone” is a web application developed using ASP.NET Core 6. It provides a platform for users to create, share, and discover recipes. The application utilizes SQL Server for data storage, Bootstrap for front-end design, and follows the Model-View-Controller (MVC) architectural pattern. It incorporates a structured data access layer and service layer for efficient data management and business logic implementation.
- 
+![image](https://github.com/LevikoSUM/RecipesForEveryone/assets/115878070/a9c0d20c-c381-425f-89df-20188d359ac2) 
 Functionality:
 1.	User Authentication: Users can register for an account or log in using existing credentials. Authentication is implemented securely to protect user data.
- 
+ ![image](https://github.com/LevikoSUM/RecipesForEveryone/assets/115878070/5a3b2323-48cc-4a5c-8198-caa428d25f86)
 2.	Recipe Creation: Registered users can create new recipes by providing details such as title, ingredients, instructions, and images.
- 
+![image](https://github.com/LevikoSUM/RecipesForEveryone/assets/115878070/2c48b9d1-3372-48d0-b168-19af135e96c7)
 3.	Public Recipe Sharing: Users have the option to mark their recipes as public. Public recipes are displayed in the "Public Recipes" tab, allowing other users to discover and view them.
- 
+ ![image](https://github.com/LevikoSUM/RecipesForEveryone/assets/115878070/92d128d2-f995-41b3-9825-9e5e4d01c891)
 4.	Recipe Comments: Users can comment on recipes to share feedback, tips, or ask questions. Comments are visible to other users viewing the recipe.
- 
+ ![image](https://github.com/LevikoSUM/RecipesForEveryone/assets/115878070/c22c498e-51d3-47bc-a05d-bc13c6dde2ab)
 5.	Editing and Deleting Recipes: Recipe authors have the privilege to edit or delete their own recipes. This functionality ensures users can maintain and update their recipes as needed.
 6.	Personal Recipe Management: Users have a dedicated tab to view all the recipes they have created. This tab provides easy access to manage and organize their recipes.
+   ![image](https://github.com/LevikoSUM/RecipesForEveryone/assets/115878070/111d4dec-6177-4623-8974-4b3339d65163)
+
  
 Architecture:
 1.	Model-View-Controller (MVC): The application is structured following the MVC architectural pattern. This separation of concerns ensures clear division between presentation, data, and business logic layers.

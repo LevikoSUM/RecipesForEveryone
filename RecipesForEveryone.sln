@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipesForEveryone", "Recip
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipesForEveryone.Data", "RecipesForEveryone.Data\RecipesForEveryone.Data.csproj", "{A1E4D4D1-99A8-4E64-A1B5-9D85177C9E0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{0E0EC694-F0F4-4F7E-99BD-4B6C3F995D0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{0E0EC694-F0F4-4F7E-99BD-4B6C3F995D0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

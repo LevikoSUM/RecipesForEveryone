@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using RecipesForEveryone.Data.Data;
 using RecipesForEveryone.Data.Data.Enums;
 using RecipesForEveryone.Data.Repositories.Abstractions;
@@ -16,10 +17,12 @@ namespace Services.Services
     {
         private readonly IRepository<Recipe> _repository;
         private readonly IMapper _mapper;
-        public RecipeService(IRepository<Recipe> repository, IMapper mapper)
+        private readonly ApplicationDbContext _context;
+        public RecipeService(IRepository<Recipe> repository, IMapper mapper, ApplicationDbContext context)
         {
             _repository = repository;
             _mapper = mapper;
+            _context = context;
         }
         public async Task AddRecipeAsync(RecipeDTO recipe)
         {
@@ -40,8 +43,16 @@ namespace Services.Services
 
         public async Task<RecipeDTO> GetRecipeByIdAsync(int id)
         {
-            return _mapper.Map<RecipeDTO>
-                (await _repository.GetByIdAsync(id));
+            var recipe = await _repository.GetByIdAsync(id);
+            if (recipe != null)
+            {
+                await _context.Entry(recipe)
+                    .Collection(r => r.Comments)
+                    .LoadAsync();
+            }
+            return _mapper.Map<RecipeDTO>(recipe);
+            //return _mapper.Map<RecipeDTO>
+            //    (await _repository.GetByIdAsync(id));
         }
 
         public async Task<IEnumerable<RecipeDTO>> GetRecipesByTypeAsync(RecipeType recipeType)

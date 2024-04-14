@@ -1,4 +1,4 @@
-﻿@model Services.DTOs.RecipeDTO
+﻿@model RecipesForEveryone.Models.RecipeViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -10,8 +10,12 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div hidden class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
@@ -19,17 +23,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ingredients" class="control-label"></label>
-                <input asp-for="Ingredients" class="form-control" />
+                <textarea asp-for="Ingredients" class="form-control"></textarea>
                 <span asp-validation-for="Ingredients" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Instructions" class="control-label"></label>
-                <input asp-for="Instructions" class="form-control" />
+                <textarea asp-for="Instructions" class="form-control"></textarea>
                 <span asp-validation-for="Instructions" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
@@ -38,18 +43,22 @@
                 </label>
             </div>
             <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
+                <input asp-for="Image" type="hidden" value="-" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
-                <span asp-validation-for="UserId" class="text-danger"></span>
+                <label asp-for="Picture" class="control-label"></label>
+                <input asp-for="Picture" type="file" class="form-control-file" />
+                <span asp-validation-for="Picture" class="text-danger"></span>
             </div>
+            @*<div class="form-group">
+            <label asp-for="UserId" class="control-label"></label>
+            <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>*@
             <div class="form-group">
                 <label asp-for="RecipeType" class="control-label"></label>
-                <select asp-for="RecipeType" class="form-control"></select>
+                <select asp-for="RecipeType" class="form-control" asp-items="ViewBag.RecipeTypes">
+                    <option value="">Select Recipe Type</option>
+                </select>
                 <span asp-validation-for="RecipeType" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="Id" />

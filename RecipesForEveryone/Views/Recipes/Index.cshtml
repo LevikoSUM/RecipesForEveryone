@@ -4,10 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>My Recipes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <button type="button" class="btn btn-primary"onclick="location.href='@Url.Action("Create","Recipes")'">
+    <i class="bi bi-plus-square"></i> ADD NEW RECIPE </button>
 </p>
 <table class="table">
     <thead>
@@ -19,23 +20,8 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Ingredients)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Instructions)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsPublic)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.RecipeType)
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.AppUser)
-            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -49,27 +35,12 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Ingredients)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Instructions)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPublic)
-            </td>
-            <td>
-                    <img class="img-thumbnail" src="~/uploads/@item.Image" alt="@item.Title">
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.RecipeType)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.AppUser.Id)
-            </td>*@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm"> <i class="bi bi-pencil-square"></i></a> 
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm"> <i class="bi bi-eye"></i></a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm"><i class="bi bi-trash3"></i></a>
             </td>
         </tr>
 }

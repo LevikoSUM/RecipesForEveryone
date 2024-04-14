@@ -14,11 +14,17 @@ Functionality:
    ![image](https://github.com/LevikoSUM/RecipesForEveryone/assets/115878070/111d4dec-6177-4623-8974-4b3339d65163)
   	
 How to Run the Project
+
 Follow these steps:
+
 1.Clone the project to your local computer
+
 2.Open the project folder using Visual Studio 2022
+
 3.Build the project
+
 4.Run the project by pressing F5 or clicking on the green "Run" button in Visual Studio
+
  
 Architecture:
 1.	Model-View-Controller (MVC): The application is structured following the MVC architectural pattern. This separation of concerns ensures clear division between presentation, data, and business logic layers.

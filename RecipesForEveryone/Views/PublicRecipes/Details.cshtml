@@ -1,0 +1,57 @@
+﻿@model Services.DTOs.RecipeDTO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Title</h1>
+
+<div>
+    <div>
+        <img class="img-thumbnail" src="~/uploads/@Model.Image" alt="@Model.Title">
+    </div>
+
+    <div>
+        <h4>Description</h4>
+        <p>@Model.Description</p>
+    </div>
+
+    <div>
+        <h4>Ingredients</h4>
+        <p>@Model.Ingredients</p>
+    </div>
+
+    <div>
+        <h4>Instructions</h4>
+        <p>@Model.Instructions</p>
+    </div>
+</div>
+<h4>Add a Comment</h4>
+<form asp-controller="Comments" asp-action="Create" method="post">
+    <input type="hidden" name="comment.RecipeId" value="@Model.Id" /> <!-- Hidden field to pass the recipe ID -->
+    <div class="form-group">
+        <label for="content">Comment:</label>
+        <textarea class="form-control" id="content" name="comment.Content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+@if (Model.Comments != null && Model.Comments.Any())
+{
+    <div>
+        <h4>Comments</h4>
+        <hr />
+        <ul>
+            @foreach (var comment in Model.Comments)
+            {
+                <li>
+                    <span>@comment.UserName : </span> @comment.Content
+                    
+                </li>
+
+            }
+        </ul>
+    </div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Services.DTOs.RecipeDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Public Recipes</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecipeType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeType)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm"> <i class="bi bi-eye"></i></a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

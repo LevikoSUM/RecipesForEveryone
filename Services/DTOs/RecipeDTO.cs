@@ -17,6 +17,8 @@ namespace Services.DTOs
         public string? Image { get; set; }
         public string UserId { get; set; }
         public RecipeType RecipeType { get; set; }
-        public string RecipeTypeName { get; set; } 
+        public string RecipeTypeName { get; set; }
+        public ICollection<CommentDTO> Comments { get; set; }
+
     }
 }

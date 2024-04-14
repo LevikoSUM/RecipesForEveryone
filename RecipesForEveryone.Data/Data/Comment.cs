@@ -12,7 +12,7 @@ namespace RecipesForEveryone.Data.Data
         public string Content { get; set; }
         public string UserId { get; set; }
         public int RecipeId { get; set; }
-
+        public string UserName { get; set; }
         public virtual AppUser? AppUser { get; set; }
         public virtual Recipe? Recipe { get; set; }
     }

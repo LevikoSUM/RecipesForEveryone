@@ -25,13 +25,13 @@ namespace RecipesForEveryone.Data.Data
                 .HasOne(c => c.Recipe)
                 .WithMany(r => r.Comments)
                 .HasForeignKey(r => r.RecipeId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Comment>()
                 .HasOne(c => c.AppUser)
                 .WithMany(u => u.Comments)
                 .HasForeignKey(u => u.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
         }
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Recipe> Recipes { get; set; }

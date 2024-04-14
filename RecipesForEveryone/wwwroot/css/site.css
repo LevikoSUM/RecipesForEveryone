@@ -16,3 +16,6 @@ html {
 body {
   margin-bottom: 60px;
 }
+.navbar-nav .nav-link {
+    color: white !important; /* Set text color to white */
+}

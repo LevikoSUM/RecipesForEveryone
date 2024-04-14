@@ -26,9 +26,11 @@ Technologies Used:
 4.	Entity Framework Core: Object-relational mapping framework for database access.
 5.	C#: Primary programming language used for backend development.
 6.	HTML/CSS/JavaScript: Languages for building the user interface and client-side functionality.
+   
 Future Enhancements:
 1.	Implementing additional features such as recipe categorization and search functionality.
 2.	Enhancing user profiles with avatar images and social sharing capabilities.
 3.	Introducing a rating system for recipes based on user feedback.
 4.	Improving accessibility and responsiveness for a seamless user experience across different devices.
+   
 Contact Information ->  kosta.ilev@gmail.com
